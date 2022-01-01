@@ -18,7 +18,7 @@ class IngredientsRecipesViewController: UITableViewController {
 }
 
 extension IngredientsRecipesViewController {
-    
+    //
     override func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
