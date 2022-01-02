@@ -34,7 +34,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" id="UOh-mx-4WH">
                         <imageReference key="image" image="person" catalog="system" renderingMode="hierarchical-single">
                             <hierarchicalColors>
-                                <color red="0.0" green="0.46226774580000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color red="0.14520269629999999" green="0.2118509412" blue="0.1247086152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color systemColor="secondaryLabelColor"/>
                                 <color systemColor="tertiaryLabelColor"/>
                             </hierarchicalColors>

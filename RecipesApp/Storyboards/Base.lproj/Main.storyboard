@@ -12,11 +12,13 @@
         <scene sceneID="7Ep-O0-M4C">
             <objects>
                 <tabBarController id="kUD-zg-VMs" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="jTS-Wr-1Zm">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jTS-Wr-1Zm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.36518001560000002" green="0.60419023039999997" blue="0.29773718119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.36518001560000002" green="0.60419023039999997" blue="0.29773718119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.063426044469999998" green="0.4361498815" blue="0.29773718119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.14520269629999999" green="0.33188127097764425" blue="0.1247086152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="IhS-a4-IQT" kind="relationship" relationship="viewControllers" id="F4F-9y-ZX9"/>
@@ -84,7 +86,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.0" green="0.46226774580000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.063426044469999998" green="0.4361498815" blue="0.29773718119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="5ND-dh-gxi"/>
                                                     <constraint firstItem="1qB-QM-oKm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ePi-Pk-f8d" secondAttribute="leading" constant="20" symbolic="YES" id="RRH-8t-mS0"/>
@@ -110,7 +112,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.46226774584420893" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.063426044469999998" green="0.4361498815" blue="0.29773718119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="1fR-ni-z3g" firstAttribute="leading" secondItem="wvP-Mf-1E0" secondAttribute="leading" constant="30" id="6bW-yH-o3v"/>
                                     <constraint firstItem="1fR-ni-z3g" firstAttribute="top" secondItem="wvP-Mf-1E0" secondAttribute="top" constant="70" id="JBf-bI-jop"/>
