@@ -14,6 +14,7 @@ class RecipeCell: UITableViewCell {
     @IBOutlet weak var reviewValueLabel: UILabel!
     @IBOutlet weak var creatorLabel: UILabel!
     
+    @IBOutlet weak var dishImage: UIImageView!
     
     
     override func awakeFromNib() {
