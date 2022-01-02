@@ -12,8 +12,6 @@
 		D796B9A1277F6C9F00802127 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796B9A0277F6C9F00802127 /* LoginViewController.swift */; };
 		D796B9A3277F894400802127 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796B9A2277F894400802127 /* RecipeCell.swift */; };
 		D796B9A52780A92000802127 /* ForIngredientsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D796B9A42780A92000802127 /* ForIngredientsStoryboard.storyboard */; };
-		D796B9A72780AF2100802127 /* FavoritesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D796B9A62780AF2100802127 /* FavoritesStoryboard.storyboard */; };
-		D796B9A92780AF4C00802127 /* UsersPostsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D796B9A82780AF4C00802127 /* UsersPostsStoryboard.storyboard */; };
 		D796B9AB2780AF6F00802127 /* PersonalPostsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D796B9AA2780AF6F00802127 /* PersonalPostsStoryboard.storyboard */; };
 		D796B9AD2780AFE700802127 /* SettingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D796B9AC2780AFE700802127 /* SettingsStoryboard.storyboard */; };
 		D79C80E9277DE3990046A802 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C80E8277DE3990046A802 /* AppDelegate.swift */; };
@@ -32,8 +30,6 @@
 		D796B9A0277F6C9F00802127 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D796B9A2277F894400802127 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		D796B9A42780A92000802127 /* ForIngredientsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForIngredientsStoryboard.storyboard; sourceTree = "<group>"; };
-		D796B9A62780AF2100802127 /* FavoritesStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoritesStoryboard.storyboard; sourceTree = "<group>"; };
-		D796B9A82780AF4C00802127 /* UsersPostsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UsersPostsStoryboard.storyboard; sourceTree = "<group>"; };
 		D796B9AA2780AF6F00802127 /* PersonalPostsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalPostsStoryboard.storyboard; sourceTree = "<group>"; };
 		D796B9AC2780AFE700802127 /* SettingsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsStoryboard.storyboard; sourceTree = "<group>"; };
 		D79C80E5277DE3990046A802 /* RecipesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,8 +107,6 @@
 				D79C80EE277DE3990046A802 /* Main.storyboard */,
 				D79C80F3277DE39D0046A802 /* LaunchScreen.storyboard */,
 				D796B9A42780A92000802127 /* ForIngredientsStoryboard.storyboard */,
-				D796B9A62780AF2100802127 /* FavoritesStoryboard.storyboard */,
-				D796B9A82780AF4C00802127 /* UsersPostsStoryboard.storyboard */,
 				D796B9AA2780AF6F00802127 /* PersonalPostsStoryboard.storyboard */,
 				D796B9AC2780AFE700802127 /* SettingsStoryboard.storyboard */,
 			);
@@ -230,12 +224,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D796B9A72780AF2100802127 /* FavoritesStoryboard.storyboard in Resources */,
 				D79C80F5277DE39D0046A802 /* LaunchScreen.storyboard in Resources */,
 				D79C80F2277DE39D0046A802 /* Assets.xcassets in Resources */,
 				D796B9AB2780AF6F00802127 /* PersonalPostsStoryboard.storyboard in Resources */,
 				D796B9A52780A92000802127 /* ForIngredientsStoryboard.storyboard in Resources */,
-				D796B9A92780AF4C00802127 /* UsersPostsStoryboard.storyboard in Resources */,
 				D796B9AD2780AFE700802127 /* SettingsStoryboard.storyboard in Resources */,
 				D79C80F0277DE3990046A802 /* Main.storyboard in Resources */,
 			);

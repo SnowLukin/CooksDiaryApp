@@ -14,6 +14,7 @@ class RecipeCell: UITableViewCell {
     @IBOutlet weak var reviewValueLabel: UILabel!
     @IBOutlet weak var creatorLabel: UILabel!
     
+    @IBOutlet weak var dishImage: UIImageView!
     
     
     override func awakeFromNib() {
@@ -25,10 +26,13 @@ class RecipeCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-        
-        
-        
+//        if selected {
+//            contentView.backgroundColor = UIColor(red: 0.063, green: 0.436, blue: 0.298, alpha: 1)
+//        } else {
+//            contentView.backgroundColor = UIColor(red: 0.365, green: 0.604, blue: 0.298, alpha: 1)
+//        }
     }
+    
+    
 
 }

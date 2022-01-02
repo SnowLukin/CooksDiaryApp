@@ -15,12 +15,13 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jTS-Wr-1Zm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.063426044469999998" green="0.4361498815" blue="0.29773718119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.14520269629999999" green="0.33188127097764425" blue="0.1247086152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="IhS-a4-IQT" kind="relationship" relationship="viewControllers" id="F4F-9y-ZX9"/>
-                        <segue destination="gYF-p7-Acp" kind="relationship" relationship="viewControllers" id="9KN-Mt-ofs"/>
-                        <segue destination="0Up-2X-62a" kind="relationship" relationship="viewControllers" id="9J9-Ft-ara"/>
                         <segue destination="gLz-r8-wzi" kind="relationship" relationship="viewControllers" id="t0k-oe-B2Z"/>
                         <segue destination="K4F-ze-f8Y" kind="relationship" relationship="viewControllers" id="Yq1-5t-9Zl"/>
                     </connections>
@@ -85,7 +86,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.0" green="0.46226774580000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.063426044469999998" green="0.4361498815" blue="0.29773718119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="5ND-dh-gxi"/>
                                                     <constraint firstItem="1qB-QM-oKm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ePi-Pk-f8d" secondAttribute="leading" constant="20" symbolic="YES" id="RRH-8t-mS0"/>
@@ -111,7 +112,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.46226774584420893" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.063426044469999998" green="0.4361498815" blue="0.29773718119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="1fR-ni-z3g" firstAttribute="leading" secondItem="wvP-Mf-1E0" secondAttribute="leading" constant="30" id="6bW-yH-o3v"/>
                                     <constraint firstItem="1fR-ni-z3g" firstAttribute="top" secondItem="wvP-Mf-1E0" secondAttribute="top" constant="70" id="JBf-bI-jop"/>
@@ -147,25 +148,15 @@
             </objects>
             <point key="canvasLocation" x="327.536231884058" y="-1074.7767857142856"/>
         </scene>
-        <!--FavoritesStoryboard-->
-        <scene sceneID="1Xd-6q-fnw">
-            <objects>
-                <viewControllerPlaceholder storyboardName="FavoritesStoryboard" id="gYF-p7-Acp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="star" catalog="system" id="GcB-H1-VP6"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0C8-zb-ZiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="783" y="-472"/>
-        </scene>
         <!--PersonalPostsStoryboard-->
         <scene sceneID="UbR-s7-Gb5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQP-ue-M3w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="PersonalPostsStoryboard" id="gLz-r8-wzi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Recipes" image="person" catalog="system" id="owf-pj-A2m"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQP-ue-M3w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2233" y="-472"/>
+            <point key="canvasLocation" x="1492" y="-472"/>
         </scene>
         <!--SettingsStoryboard-->
         <scene sceneID="lyK-ed-aue">
@@ -176,16 +167,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAe-kJ-rYx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2980" y="-472"/>
-        </scene>
-        <!--UsersPostsStoryboard-->
-        <scene sceneID="HXN-ue-T6n">
-            <objects>
-                <viewControllerPlaceholder storyboardName="UsersPostsStoryboard" id="0Up-2X-62a" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Popular" image="person.3" catalog="system" id="Q9v-2Z-dOO"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uq7-Nw-BLG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1492" y="-472"/>
         </scene>
         <!--ForIngredientsStoryboard-->
         <scene sceneID="mCE-gA-1Qr">
@@ -203,8 +184,6 @@
         <image name="loginMealImage" width="2500" height="1667"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person.3" catalog="system" width="128" height="62"/>
-        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
