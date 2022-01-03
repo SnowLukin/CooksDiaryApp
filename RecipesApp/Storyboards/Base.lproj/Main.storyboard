@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="7Ep-O0-M4C">
             <objects>
-                <tabBarController id="kUD-zg-VMs" sceneMemberID="viewController">
+                <tabBarController id="kUD-zg-VMs" customClass="TabBarController" customModule="RecipesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jTS-Wr-1Zm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -151,10 +151,10 @@
         <!--PersonalPostsStoryboard-->
         <scene sceneID="UbR-s7-Gb5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQP-ue-M3w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="PersonalPostsStoryboard" id="gLz-r8-wzi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Recipes" image="person" catalog="system" id="owf-pj-A2m"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQP-ue-M3w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1492" y="-472"/>
         </scene>

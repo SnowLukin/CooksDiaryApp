@@ -16,23 +16,26 @@ class RecipeCell: UITableViewCell {
     
     @IBOutlet weak var dishImage: UIImageView!
     
+    @IBOutlet weak var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
+        likeButton.tintColor = .darkGray
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-//        if selected {
-//            contentView.backgroundColor = UIColor(red: 0.063, green: 0.436, blue: 0.298, alpha: 1)
-//        } else {
-//            contentView.backgroundColor = UIColor(red: 0.365, green: 0.604, blue: 0.298, alpha: 1)
-//        }
+        
     }
     
+    @IBAction func likeButtonPressed(_ sender: UIButton) {
+        if sender.tintColor == .darkGray {
+            sender.tintColor = .systemRed
+        } else {
+            sender.tintColor = .darkGray
+        }
+    }
     
 
 }

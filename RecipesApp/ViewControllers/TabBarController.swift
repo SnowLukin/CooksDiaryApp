@@ -8,10 +8,28 @@
 import UIKit
 
 class TabBarController: UITabBarController {
+    
+    var user: User!
+    var recipes = Recipe.getRecipes()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        shareData()
     }
+    
+    private func shareData() {
+        guard let viewControllers = viewControllers else { return }
+        
+        for viewController in viewControllers {
+            guard let navVC = viewController as? UINavigationController else { return }
+            
+            if let rootVC = navVC.topViewController as? IngredientsRecipesViewController {
+                rootVC.recipes = recipes
+            }
+        }
+    }
+    
 }
 

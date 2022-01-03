@@ -122,13 +122,20 @@ struct Recipe {
     
     var name: String
     var description: String
+    var author: String
     
     var ingredientTags: [Ingredients]
     
-    init(name: String, description: String?, ingredientTags: [Ingredients]?) {
+    init(name: String, description: String?, ingredientTags: [Ingredients]?, author: String) {
         self.name = name
         self.description = description ?? ""
         self.ingredientTags = ingredientTags ?? []
+        self.author = author
     }
     
+    static func getRecipes() -> [Recipe] {
+        
+        DataManager.shared.recipes
+        
+    }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D78215B12783A2440076ACA2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78215B02783A2440076ACA2 /* Extensions.swift */; };
 		D796B997277F320700802127 /* IngredientsRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796B996277F320700802127 /* IngredientsRecipesViewController.swift */; };
 		D796B99D277F33C100802127 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796B99C277F33C100802127 /* Recipes.swift */; };
 		D796B9A1277F6C9F00802127 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796B9A0277F6C9F00802127 /* LoginViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D78215B02783A2440076ACA2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D796B996277F320700802127 /* IngredientsRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsRecipesViewController.swift; sourceTree = "<group>"; };
 		D796B99C277F33C100802127 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		D796B9A0277F6C9F00802127 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				D796B996277F320700802127 /* IngredientsRecipesViewController.swift */,
+				D78215B02783A2440076ACA2 /* Extensions.swift */,
 				D796B998277F32DF00802127 /* ParallaxCustomCell */,
 			);
 			path = IngredientRecipe;
@@ -245,6 +248,7 @@
 				D79C8103277DE46A0046A802 /* User.swift in Sources */,
 				D796B9A3277F894400802127 /* RecipeCell.swift in Sources */,
 				D79C80ED277DE3990046A802 /* TabBarController.swift in Sources */,
+				D78215B12783A2440076ACA2 /* Extensions.swift in Sources */,
 				D796B99D277F33C100802127 /* Recipes.swift in Sources */,
 				D796B997277F320700802127 /* IngredientsRecipesViewController.swift in Sources */,
 				D79C80E9277DE3990046A802 /* AppDelegate.swift in Sources */,
