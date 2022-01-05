@@ -93,6 +93,9 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" title="Log Out"/>
+                                            <connections>
+                                                <segue destination="Pai-eM-qge" kind="unwind" unwindAction="unwindSegueWithSegue:" id="aqf-9D-rXl"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -132,6 +135,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPh-9N-DWs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Pai-eM-qge" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="870" y="98"/>
         </scene>
