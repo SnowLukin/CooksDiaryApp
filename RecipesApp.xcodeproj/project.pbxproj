@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A94AF6F727846AD80070EB3B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94AF6F627846AD80070EB3B /* SettingsTableViewController.swift */; };
 		A94AF6FE2785B5820070EB3B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94AF6FD2785B5820070EB3B /* SettingsTableViewController.swift */; };
 		A94AF7012785B7EF0070EB3B /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94AF7002785B7EF0070EB3B /* ImageTableViewCell.swift */; };
 		A9C7800E2785D959005321C7 /* BioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7800D2785D959005321C7 /* BioTableViewCell.swift */; };
-		A9C780102785DA2A005321C7 /* buttonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7800F2785DA2A005321C7 /* buttonTableViewCell.swift */; };
+		A9C780102785DA2A005321C7 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7800F2785DA2A005321C7 /* ButtonTableViewCell.swift */; };
 		D78215B12783A2440076ACA2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78215B02783A2440076ACA2 /* Extensions.swift */; };
 		D796B997277F320700802127 /* IngredientsRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796B996277F320700802127 /* IngredientsRecipesViewController.swift */; };
 		D796B99D277F33C100802127 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796B99C277F33C100802127 /* Recipes.swift */; };
@@ -31,11 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A94AF6F627846AD80070EB3B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = RecipesApp/Storyboards/SettingsViewContorller/SettingsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		A94AF6FD2785B5820070EB3B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		A94AF7002785B7EF0070EB3B /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		A9C7800D2785D959005321C7 /* BioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTableViewCell.swift; sourceTree = "<group>"; };
-		A9C7800F2785DA2A005321C7 /* buttonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonTableViewCell.swift; sourceTree = "<group>"; };
+		A9C7800F2785DA2A005321C7 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		D78215B02783A2440076ACA2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D796B996277F320700802127 /* IngredientsRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsRecipesViewController.swift; sourceTree = "<group>"; };
 		D796B99C277F33C100802127 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
@@ -79,7 +77,7 @@
 		A94AF6FF2785B7350070EB3B /* CustomSettingsCells */ = {
 			isa = PBXGroup;
 			children = (
-				A9C7800F2785DA2A005321C7 /* buttonTableViewCell.swift */,
+				A9C7800F2785DA2A005321C7 /* ButtonTableViewCell.swift */,
 				A9C7800D2785D959005321C7 /* BioTableViewCell.swift */,
 				A94AF7002785B7EF0070EB3B /* ImageTableViewCell.swift */,
 			);
@@ -158,7 +156,6 @@
 		D79C80FE277DE4040046A802 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A94AF6F627846AD80070EB3B /* SettingsTableViewController.swift */,
 				D79C80F1277DE39D0046A802 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -277,12 +274,11 @@
 				D796B9A1277F6C9F00802127 /* LoginViewController.swift in Sources */,
 				D79C8107277DE5480046A802 /* DataManager.swift in Sources */,
 				D79C8103277DE46A0046A802 /* User.swift in Sources */,
-				A94AF6F727846AD80070EB3B /* SettingsTableViewController.swift in Sources */,
 				D796B9A3277F894400802127 /* RecipeCell.swift in Sources */,
 				D79C80ED277DE3990046A802 /* TabBarController.swift in Sources */,
 				A9C7800E2785D959005321C7 /* BioTableViewCell.swift in Sources */,
 				D78215B12783A2440076ACA2 /* Extensions.swift in Sources */,
-				A9C780102785DA2A005321C7 /* buttonTableViewCell.swift in Sources */,
+				A9C780102785DA2A005321C7 /* ButtonTableViewCell.swift in Sources */,
 				D796B99D277F33C100802127 /* Recipes.swift in Sources */,
 				A94AF7012785B7EF0070EB3B /* ImageTableViewCell.swift in Sources */,
 				A94AF6FE2785B5820070EB3B /* SettingsTableViewController.swift in Sources */,

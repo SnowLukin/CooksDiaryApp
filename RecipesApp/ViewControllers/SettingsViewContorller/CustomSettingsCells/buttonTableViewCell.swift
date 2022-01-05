@@ -7,17 +7,17 @@
 
 import UIKit
 
-class buttonTableViewCell: UITableViewCell {
+class ButtonTableViewCell: UITableViewCell {
+    
+    @IBOutlet var logOutButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        logOutButton.layer.cornerRadius = 10
+        backgroundColor = UIColor(red: 0.224, green: 0.381, blue: 0.210, alpha: 1)
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
 
 }

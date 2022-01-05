@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="265" id="x0j-Dw-MoG" customClass="ImageTableViewCell" customModule="RecipesApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="265" id="x0j-Dw-MoG" customClass="ImageTableViewCell" customModule="RecipesApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="49.5" width="374" height="265"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x0j-Dw-MoG" id="0mN-os-rSW">
@@ -55,7 +55,7 @@
                                     <outlet property="userNameLabel" destination="i7m-vt-Rb2" id="KUk-vz-4g9"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bioCell" rowHeight="185" id="92i-b4-WES" customClass="BioTableViewCell" customModule="RecipesApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="bioCell" rowHeight="185" id="92i-b4-WES" customClass="BioTableViewCell" customModule="RecipesApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="314.5" width="374" height="185"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="92i-b4-WES" id="hny-Z7-0eb">
@@ -80,19 +80,19 @@
                                     <outlet property="bioLabel" destination="Agi-ud-csZ" id="W4g-og-Ul6"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="buttonCell" rowHeight="68" id="Piy-aK-yKg">
-                                <rect key="frame" x="20" y="499.5" width="374" height="68"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="buttonCell" rowHeight="70" id="Piy-aK-yKg" customClass="ButtonTableViewCell" customModule="RecipesApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="499.5" width="374" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Piy-aK-yKg" id="c8c-WW-JdS">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="68"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bZ-tz-mJu">
-                                            <rect key="frame" x="20" y="11" width="334" height="46"/>
-                                            <color key="backgroundColor" systemColor="systemRedColor"/>
+                                            <rect key="frame" x="20" y="11" width="334" height="48"/>
+                                            <color key="backgroundColor" red="0.65811707739977487" green="0.21456488563989731" blue="0.16613643387486871" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" title="Log In"/>
+                                            <state key="normal" title="Log Out"/>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -102,6 +102,9 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="6bZ-tz-mJu" secondAttribute="bottom" id="uzX-Qv-xlL"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="logOutButton" destination="6bZ-tz-mJu" id="rlZ-te-hWC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -158,9 +161,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>

@@ -14,9 +14,14 @@ class ImageTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        userImageView.layer.masksToBounds = false
+        userImageView.clipsToBounds = true
+        userImageView.layer.cornerRadius = userImageView.frame.size.height/2
+        
+        userNameLabel.textColor = .white
+        
+        backgroundColor = UIColor(red: 0.224, green: 0.381, blue: 0.210, alpha: 1)
+        
     }
-
-    
-
 }
