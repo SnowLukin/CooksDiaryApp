@@ -48,32 +48,29 @@ class SettingsTableViewController: UITableViewController {
         
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        if section == 1 {
-            return "Bio"
-        } else {
-            return ""
-        }
-    }
-    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         if section == 1 {
-            return 20
+            return 30
         } else {
             return 1
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UITableViewHeaderFooterView()
+        var content = header.defaultContentConfiguration()
+        content.textProperties.color = .white
+        
+        if section == 1 {
+            content.text = "Bio"
+        } else {
+            content.text = ""
+        }
+        
+        header.contentConfiguration = content
+        
+        return header
+        
     }
-    */
-
 }
