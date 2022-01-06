@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="7Ep-O0-M4C">
             <objects>
-                <tabBarController id="kUD-zg-VMs" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="kUD-zg-VMs" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jTS-Wr-1Zm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -62,7 +62,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="7nh-2I-pTU"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xrE-Ce-s2P">
                                                 <rect key="frame" x="0.0" y="56" width="354" height="45"/>
@@ -70,7 +70,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="n1b-MO-Dok"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePi-Pk-f8d">
                                                 <rect key="frame" x="0.0" y="112" width="354" height="25"/>
@@ -107,6 +107,7 @@
                                                 <state key="normal" title="Log In"/>
                                                 <connections>
                                                     <action selector="loginButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="QD3-5e-7CE"/>
+                                                    <segue destination="kUD-zg-VMs" kind="presentation" identifier="showTabBarController" id="PzF-5A-eRa"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -141,7 +142,6 @@
                         <outlet property="loginButton" destination="IYU-yW-hT4" id="kAk-hu-hzC"/>
                         <outlet property="loginTF" destination="pgg-Sz-7PU" id="1QC-aB-vBR"/>
                         <outlet property="passwordTF" destination="xrE-Ce-s2P" id="fXy-yi-em1"/>
-                        <segue destination="kUD-zg-VMs" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="f9k-SF-5eY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -151,10 +151,10 @@
         <!--PersonalPostsStoryboard-->
         <scene sceneID="UbR-s7-Gb5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQP-ue-M3w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="PersonalPostsStoryboard" id="gLz-r8-wzi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Recipes" image="person" catalog="system" id="owf-pj-A2m"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQP-ue-M3w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1492" y="-472"/>
         </scene>
