@@ -15,6 +15,7 @@ class PersonalPostsTableViewController: UITableViewController {
         tableView.backgroundColor = UIColor(red: 0.224, green: 0.381, blue: 0.210, alpha: 1)
 
     }
+    
 
     // MARK: - Table view data source
 
@@ -32,11 +33,11 @@ class PersonalPostsTableViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "textFieldRecipeCell", for: indexPath) as! TextFieldRecipeTableViewCell
-            cell.textFieldRecipe.delegate = self
+            cell.textFieldRecipe.tag = indexPath.section
             return cell
         case 1:
            let cell = tableView.dequeueReusableCell(withIdentifier: "textFieldRecipeCell", for: indexPath) as! TextFieldRecipeTableViewCell
-            cell.textFieldRecipe.delegate = self
+            cell.textFieldRecipe.tag = indexPath.section
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "tagsRecipeCell", for: indexPath) as! TagsRecipeTableViewCell
@@ -95,35 +96,4 @@ class PersonalPostsTableViewController: UITableViewController {
 
 }
 
-extension PersonalPostsTableViewController{
-    @objc private func didTapDone(){
-        view.endEditing(true)
-    }
-}
-
-extension PersonalPostsTableViewController: UITextViewDelegate{
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        let keyboardToolbar = UIToolbar()
-        keyboardToolbar.sizeToFit()
-        textView.inputAccessoryView = keyboardToolbar
-        
-        let doneButton = UIBarButtonItem(
-            barButtonSystemItem: .done,
-            target: self,
-            action: #selector(didTapDone)
-        )
-        
-        let flexBarButton = UIBarButtonItem(
-            barButtonSystemItem: .flexibleSpace,
-            target: nil,
-            action: nil
-        )
-        
-        keyboardToolbar.items = [flexBarButton, doneButton]
-    }
-}
 
