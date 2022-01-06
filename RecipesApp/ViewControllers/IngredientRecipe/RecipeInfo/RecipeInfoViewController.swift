@@ -9,13 +9,11 @@ import UIKit
 
 class RecipeInfoViewController: UIViewController {
     
-    // MARK: - Constants
-    struct Constants {
-        static fileprivate let headerHeight: CGFloat = 230
-    }
     
     // MARK: Properties
-//    var recipe: Recipe!
+    var recipe: Recipe!
+    
+    private let headerHeight: CGFloat = 230
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -46,7 +44,6 @@ class RecipeInfoViewController: UIViewController {
     // view for rounded corners under image
     private let roundedCornersView: UIView = {
         let view = UIView()
-//        view.backgroundColor = .red
         view.backgroundColor = UIColor(red: 0.063, green: 0.436, blue: 0.298, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 50
@@ -64,7 +61,6 @@ class RecipeInfoViewController: UIViewController {
     private let recipeNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Recipe Name"
         label.font = UIFont.boldSystemFont(ofSize: 30)
         label.textColor = .white
         label.textAlignment = .left
@@ -78,8 +74,6 @@ class RecipeInfoViewController: UIViewController {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        label.text = text + text + text + text + text + text
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 20)
         label.textAlignment = .left
@@ -102,9 +96,19 @@ class RecipeInfoViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        recipeNameLabel.text = recipe.name
+        recipeDescriptionLabel.text = recipe.description
         scrollView.delegate = self
-        
+        addSubviews()
+        arrangeConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavBackground(.clear)
+    }
+    
+    private func addSubviews() {
         headerContainerView.addSubview(headerImageView)
         scrollView.addSubview(headerContainerView)
         scrollView.addSubview(roundedCornersView)
@@ -113,13 +117,6 @@ class RecipeInfoViewController: UIViewController {
         scrollView.addSubview(recipeDescriptionLabel)
         scrollView.addSubview(endLineView)
         view.addSubview(scrollView)
-        
-        arrangeConstraints()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setNavBackground(.clear)
     }
 }
 
@@ -234,17 +231,17 @@ extension RecipeInfoViewController: UIScrollViewDelegate {
         if scrollView.contentOffset.y < 0.0 {
             // Scrolling down: Scale
             headerHeightConstraint?.constant =
-                Constants.headerHeight - scrollView.contentOffset.y
+                headerHeight - scrollView.contentOffset.y
         } else {
             // Scrolling up: Parallax
             let parallaxFactor: CGFloat = 0.25
             let offsetY = scrollView.contentOffset.y * parallaxFactor
             let minOffsetY: CGFloat = 8.0
             let availableOffset = min(offsetY, minOffsetY)
-            let contentRectOffsetY = availableOffset / Constants.headerHeight
+            let contentRectOffsetY = availableOffset / headerHeight
             headerTopConstraint?.constant = view.frame.origin.y
             headerHeightConstraint?.constant =
-                Constants.headerHeight - scrollView.contentOffset.y
+                headerHeight - scrollView.contentOffset.y
             headerImageView.layer.contentsRect =
                 CGRect(x: 0, y: -contentRectOffsetY, width: 1, height: 1)
         }

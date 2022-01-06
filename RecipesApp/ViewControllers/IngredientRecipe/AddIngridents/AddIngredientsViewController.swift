@@ -7,32 +7,42 @@
 
 import UIKit
 
-class Section {
-    let title: String
-    let options: [String]
-    var isOpened: Bool
-    
-    init(title: String, options: [String], isOpened: Bool = false) {
-        self.title = title
-        self.options = options
-        self.isOpened = isOpened
-    }
-}
-
 class AddIngredientsViewController: UITableViewController {
-
+    
     fileprivate let cellIdentifier = "ingredientCell"
     private var sections = [Section]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Setup models
+        // Setup sections
         sections = [
-            Section(title: "Section 1", options: [1, 2, 3].compactMap({ return "Cell \($0)" })),
-            Section(title: "Section 2", options: [1, 2, 3].compactMap({ return "Cell \($0)" })),
-            Section(title: "Section 3", options: [1, 2, 3].compactMap({ return "Cell \($0)" })),
-            Section(title: "Section 4", options: [1, 2, 3].compactMap({ return "Cell \($0)" })),
+            Section(title: "Meats",
+                    options: Ingredients.Meats.allCases.map({ $0.rawValue })),
+            Section(title: "Vegetables",
+                    options: Ingredients.Vegetables.allCases.map({ $0.rawValue })),
+            Section(title: "Cheese",
+                    options: Ingredients.Cheese.allCases.map({ $0.rawValue })),
+            Section(title: "Dairy",
+                    options: Ingredients.Dairy.allCases.map({ $0.rawValue })),
+            Section(title: "Alcohol",
+                    options: Ingredients.Alcohol.allCases.map({ $0.rawValue })),
+            Section(title: "Fish",
+                    options: Ingredients.Fish.allCases.map({ $0.rawValue })),
+            Section(title: "Sweeteners",
+                    options: Ingredients.Sweeteners.allCases.map({ $0.rawValue })),
+            Section(title: "Fruits & Barries",
+                    options: Ingredients.FruitsAndBarries.allCases.map({ $0.rawValue })),
+            Section(title: "Sauces",
+                    options: Ingredients.Sauces.allCases.map({ $0.rawValue })),
+            Section(title: "Beverages",
+                    options: Ingredients.Beverages.allCases.map({ $0.rawValue })),
+            Section(title: "Desserts",
+                    options: Ingredients.Desserts.allCases.map({ $0.rawValue })),
+            Section(title: "Pasta",
+                    options: Ingredients.Pasta.allCases.map({ $0.rawValue })),
+            Section(title: "Seeds",
+                    options: Ingredients.Seeds.allCases.map({ $0.rawValue }))
         ]
     }
 
@@ -63,19 +73,23 @@ extension AddIngredientsViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        
         if indexPath.row == 0 {
-            var content = cell.defaultContentConfiguration()
             content.text = sections[indexPath.section].title
-            cell.contentConfiguration = content
+        } else {
+            content.text = sections[indexPath.section].options[indexPath.row - 1]
         }
         
+        cell.contentConfiguration = content
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
-        tableView.reloadSections([indexPath.section], with: .none)
+        if indexPath.row == 0 {
+            sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
+            tableView.reloadSections([indexPath.section], with: .none)
+        }
     }
 }

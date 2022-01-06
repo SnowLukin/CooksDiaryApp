@@ -164,7 +164,7 @@
                                     <outletCollection property="starsImages" destination="RpI-bf-9Cm" collectionClass="NSMutableArray" id="Jrc-Yf-cTm"/>
                                     <outletCollection property="starsImages" destination="UO1-5I-tTy" collectionClass="NSMutableArray" id="NvA-lp-XMf"/>
                                     <outletCollection property="starsImages" destination="qRZ-o0-wcB" collectionClass="NSMutableArray" id="Iak-Ya-d1D"/>
-                                    <segue destination="ZtO-3C-RoP" kind="show" id="REe-xx-mZp"/>
+                                    <segue destination="ZtO-3C-RoP" kind="show" identifier="showInfo" id="z9u-lj-gN1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -196,7 +196,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="RVO-4o-bX8" kind="presentation" identifier="test" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="ACo-T5-8Yk"/>
+                                    <segue destination="RVO-4o-bX8" kind="presentation" identifier="" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="ACo-T5-8Yk"/>
                                 </connections>
                             </button>
                         </barButtonItem>

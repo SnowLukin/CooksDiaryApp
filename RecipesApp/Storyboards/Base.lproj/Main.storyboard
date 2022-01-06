@@ -22,7 +22,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="IhS-a4-IQT" kind="relationship" relationship="viewControllers" id="F4F-9y-ZX9"/>
-                        <segue destination="joi-ka-se9" kind="relationship" relationship="viewControllers" id="AjB-Gb-xaY"/>
                         <segue destination="gLz-r8-wzi" kind="relationship" relationship="viewControllers" id="N2v-AE-V4M"/>
                         <segue destination="K4F-ze-f8Y" kind="relationship" relationship="viewControllers" id="cx4-h9-1id"/>
                     </connections>
@@ -149,16 +148,6 @@
             </objects>
             <point key="canvasLocation" x="327.536231884058" y="-1074.7767857142856"/>
         </scene>
-        <!--FavoriteRecipesStoryboard-->
-        <scene sceneID="Aoq-lF-fj8">
-            <objects>
-                <viewControllerPlaceholder storyboardName="FavoriteRecipesStoryboard" id="joi-ka-se9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="star" catalog="system" id="XBB-Ya-o1Q"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s5b-Pe-IZ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1060" y="-472"/>
-        </scene>
         <!--PersonalPostsStoryboard-->
         <scene sceneID="UbR-s7-Gb5">
             <objects>
@@ -167,7 +156,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQP-ue-M3w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1840" y="-472"/>
+            <point key="canvasLocation" x="1492" y="-472"/>
         </scene>
         <!--SettingsStoryboard-->
         <scene sceneID="lyK-ed-aue">
@@ -195,7 +184,6 @@
         <image name="loginMealImage" width="2500" height="1667"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

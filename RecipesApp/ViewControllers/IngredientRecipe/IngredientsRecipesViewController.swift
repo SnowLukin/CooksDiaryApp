@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol RecipeCellDelegate {
+    func likeRecipe(_ indexPath: IndexPath)
+}
+
 class IngredientsRecipesViewController: UITableViewController, UIBarPositioningDelegate {
     
     // MARK: Outlets
@@ -16,7 +20,10 @@ class IngredientsRecipesViewController: UITableViewController, UIBarPositioningD
     var recipes: [Recipe]!
     var filteredRecipes = [Recipe]()
     var favoriteRecipes = [Recipe]()
+    var currentRecipe: Recipe? = nil
     
+    let darkGreenColor = UIColor(red: 0.145, green: 0.212, blue: 0.125, alpha: 1)
+    let customRedColor = UIColor(red: 0.823, green: 0.095, blue: 0.017, alpha: 1)
     
     let firstSegmentButton = UIButton()
     let firstSegmentView = UIView()
@@ -75,6 +82,23 @@ class IngredientsRecipesViewController: UITableViewController, UIBarPositioningD
         navigationController?.navigationBar.isHidden = false
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let infoVC = segue.destination as? RecipeInfoViewController else { return }
+        let indexPath = tableView.indexPathForSelectedRow!
+        infoVC.recipe = recipes[indexPath.section]
+    }
+    
+}
+
+extension IngredientsRecipesViewController: RecipeCellDelegate {
+    func likeRecipe(_ indexPath: IndexPath) {
+        print(indexPath.section)
+        if recipes[indexPath.section].isLiked {
+            recipes[indexPath.section].isLiked = false
+        } else {
+            recipes[indexPath.section].isLiked = true
+        }
+    }
 }
 
 // MARK: - Setting NavBar
@@ -114,16 +138,20 @@ extension IngredientsRecipesViewController {
         case 1:
             sender.setTitleColor(.white, for: .normal)
             firstSegmentView.backgroundColor = .white
-            
             secondSegmentButton.setTitleColor(.lightGray, for: .normal)
             secondSegmentView.backgroundColor = .clear
+            
+            filteredRecipes = recipes
         default:
             sender.setTitleColor(.white, for: .normal)
             secondSegmentView.backgroundColor = .white
-            
             firstSegmentButton.setTitleColor(.lightGray, for: .normal)
             firstSegmentView.backgroundColor = .clear
+            
+            print(recipes[0].isLiked)
+            filteredRecipes = recipes.filter({ $0.isLiked == true })
         }
+        tableView.reloadData()
     }
     
     private func createMenuBar() {
@@ -154,12 +182,12 @@ extension IngredientsRecipesViewController {
     
     private func setSegmentView(_ container: UIView) {
         
-        firstSegmentButton.setSegmentButton(title: "All Recipes",
+        firstSegmentButton.setSegmentButton(title: "Recipes",
                                             textColor: .white,
                                             tag: 1)
         firstSegmentButton.addTarget(self, action: #selector(segmentButtonClicked(_:)), for: .touchUpInside)
         
-        secondSegmentButton.setSegmentButton(title: "Top Rated",
+        secondSegmentButton.setSegmentButton(title: "Favorites",
                                                  textColor: .lightGray,
                                                  tag: 2)
         secondSegmentButton.addTarget(self, action: #selector(segmentButtonClicked(_:)), for: .touchUpInside)
@@ -211,7 +239,10 @@ extension IngredientsRecipesViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        15
+        if section == filteredRecipes.count - 1 {
+            return 100
+        }
+        return 15
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -233,10 +264,18 @@ extension IngredientsRecipesViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecipeCell
         
-        let recipe = recipes[indexPath.section]
+        let recipe = filteredRecipes[indexPath.section]
         
+        cell.indexPath = indexPath
+        cell.delegate = self
         cell.dishNameLabel.text = recipe.name
         cell.creatorLabel.text = recipe.author
+        
+        if recipe.isLiked {
+            cell.likeButton.tintColor = customRedColor
+        } else {
+            cell.likeButton.tintColor = darkGreenColor
+        }
         
         // background color when selected
         let selectedView = UIView()
