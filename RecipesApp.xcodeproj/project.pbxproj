@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		A94AF6FE2785B5820070EB3B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94AF6FD2785B5820070EB3B /* SettingsTableViewController.swift */; };
 		A94AF7012785B7EF0070EB3B /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94AF7002785B7EF0070EB3B /* ImageTableViewCell.swift */; };
+		A9BC23E427866F0C0055EF08 /* PersonalPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BC23E327866F0C0055EF08 /* PersonalPostsTableViewController.swift */; };
+		A9BC23E727866FF70055EF08 /* TextFieldRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BC23E627866FF70055EF08 /* TextFieldRecipeTableViewCell.swift */; };
+		A9BC23E9278670350055EF08 /* TagsRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BC23E8278670350055EF08 /* TagsRecipeTableViewCell.swift */; };
+		A9BC23EB278671750055EF08 /* ImageRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BC23EA278671750055EF08 /* ImageRecipeTableViewCell.swift */; };
+		A9BC23ED278671F30055EF08 /* ButtonRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BC23EC278671F30055EF08 /* ButtonRecipeTableViewCell.swift */; };
 		A9C7800E2785D959005321C7 /* BioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7800D2785D959005321C7 /* BioTableViewCell.swift */; };
 		A9C780102785DA2A005321C7 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7800F2785DA2A005321C7 /* ButtonTableViewCell.swift */; };
 		D78215B12783A2440076ACA2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78215B02783A2440076ACA2 /* Extensions.swift */; };
@@ -32,6 +37,11 @@
 /* Begin PBXFileReference section */
 		A94AF6FD2785B5820070EB3B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		A94AF7002785B7EF0070EB3B /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		A9BC23E327866F0C0055EF08 /* PersonalPostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPostsTableViewController.swift; sourceTree = "<group>"; };
+		A9BC23E627866FF70055EF08 /* TextFieldRecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldRecipeTableViewCell.swift; sourceTree = "<group>"; };
+		A9BC23E8278670350055EF08 /* TagsRecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRecipeTableViewCell.swift; sourceTree = "<group>"; };
+		A9BC23EA278671750055EF08 /* ImageRecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecipeTableViewCell.swift; sourceTree = "<group>"; };
+		A9BC23EC278671F30055EF08 /* ButtonRecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRecipeTableViewCell.swift; sourceTree = "<group>"; };
 		A9C7800D2785D959005321C7 /* BioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTableViewCell.swift; sourceTree = "<group>"; };
 		A9C7800F2785DA2A005321C7 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		D78215B02783A2440076ACA2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -82,6 +92,26 @@
 				A94AF7002785B7EF0070EB3B /* ImageTableViewCell.swift */,
 			);
 			path = CustomSettingsCells;
+			sourceTree = "<group>";
+		};
+		A9BC23E527866F810055EF08 /* CustomPersonalPostsCells */ = {
+			isa = PBXGroup;
+			children = (
+				A9BC23E627866FF70055EF08 /* TextFieldRecipeTableViewCell.swift */,
+				A9BC23E8278670350055EF08 /* TagsRecipeTableViewCell.swift */,
+				A9BC23EA278671750055EF08 /* ImageRecipeTableViewCell.swift */,
+				A9BC23EC278671F30055EF08 /* ButtonRecipeTableViewCell.swift */,
+			);
+			path = CustomPersonalPostsCells;
+			sourceTree = "<group>";
+		};
+		A9C78013278668FA005321C7 /* PersonalPostsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A9BC23E527866F810055EF08 /* CustomPersonalPostsCells */,
+				A9BC23E327866F0C0055EF08 /* PersonalPostsTableViewController.swift */,
+			);
+			path = PersonalPostsViewController;
 			sourceTree = "<group>";
 		};
 		D796B995277F31B200802127 /* IngredientRecipe */ = {
@@ -166,6 +196,7 @@
 			children = (
 				D796B9A0277F6C9F00802127 /* LoginViewController.swift */,
 				D79C80EC277DE3990046A802 /* TabBarController.swift */,
+				A9C78013278668FA005321C7 /* PersonalPostsViewController */,
 				A94AF6FC2785B3780070EB3B /* SettingsViewContorller */,
 				D796B995277F31B200802127 /* IngredientRecipe */,
 			);
@@ -274,10 +305,15 @@
 				D796B9A1277F6C9F00802127 /* LoginViewController.swift in Sources */,
 				D79C8107277DE5480046A802 /* DataManager.swift in Sources */,
 				D79C8103277DE46A0046A802 /* User.swift in Sources */,
+				A9BC23EB278671750055EF08 /* ImageRecipeTableViewCell.swift in Sources */,
 				D796B9A3277F894400802127 /* RecipeCell.swift in Sources */,
 				D79C80ED277DE3990046A802 /* TabBarController.swift in Sources */,
+				A9BC23ED278671F30055EF08 /* ButtonRecipeTableViewCell.swift in Sources */,
+				A9BC23E727866FF70055EF08 /* TextFieldRecipeTableViewCell.swift in Sources */,
 				A9C7800E2785D959005321C7 /* BioTableViewCell.swift in Sources */,
 				D78215B12783A2440076ACA2 /* Extensions.swift in Sources */,
+				A9BC23E427866F0C0055EF08 /* PersonalPostsTableViewController.swift in Sources */,
+				A9BC23E9278670350055EF08 /* TagsRecipeTableViewCell.swift in Sources */,
 				A9C780102785DA2A005321C7 /* ButtonTableViewCell.swift in Sources */,
 				D796B99D277F33C100802127 /* Recipes.swift in Sources */,
 				A94AF7012785B7EF0070EB3B /* ImageTableViewCell.swift in Sources */,

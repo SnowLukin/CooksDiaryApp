@@ -11,19 +11,118 @@
         <!--My Recipes-->
         <scene sceneID="dxg-mf-RER">
             <objects>
-                <tableViewController id="W8T-q8-lsd" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="zL2-yG-Y9H">
+                <tableViewController id="W8T-q8-lsd" customClass="PersonalPostsTableViewController" customModule="RecipesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="zL2-yG-Y9H">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PeR-Qi-tpP">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="textFieldRecipeCell" rowHeight="109" id="PeR-Qi-tpP" customClass="TextFieldRecipeTableViewCell" customModule="RecipesApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="49.5" width="374" height="109"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PeR-Qi-tpP" id="ZVb-2a-le7">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="109"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k26-zz-a0B">
+                                            <rect key="frame" x="120" y="11" width="234" height="87"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="k26-zz-a0B" secondAttribute="trailing" id="EHj-Lv-9E7"/>
+                                        <constraint firstItem="k26-zz-a0B" firstAttribute="top" secondItem="ZVb-2a-le7" secondAttribute="topMargin" id="VF4-t4-1yT"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="k26-zz-a0B" secondAttribute="bottom" id="ghh-2Q-qXO"/>
+                                        <constraint firstItem="k26-zz-a0B" firstAttribute="leading" secondItem="ZVb-2a-le7" secondAttribute="leadingMargin" constant="100" id="gqV-HI-X7f"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textFieldRecipe" destination="k26-zz-a0B" id="sOw-cD-Q1Z"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="tagsRecipeCell" rowHeight="66" id="6B2-yA-Q3A" customClass="TagsRecipeTableViewCell" customModule="RecipesApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="158.5" width="374" height="66"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6B2-yA-Q3A" id="OwO-mZ-EyD">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3T-yC-Fgh">
+                                            <rect key="frame" x="120" y="11" width="234" height="44"/>
+                                            <color key="backgroundColor" red="0.65929186125365291" green="0.81608248002989692" blue="0.64828955077534312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Add..."/>
+                                            <connections>
+                                                <action selector="addButtonPressed:" destination="6B2-yA-Q3A" eventType="touchUpInside" id="a2z-gy-ekl"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="y3T-yC-Fgh" secondAttribute="bottom" id="IMa-pT-fqn"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="y3T-yC-Fgh" secondAttribute="trailing" id="M5W-Tk-shD"/>
+                                        <constraint firstItem="y3T-yC-Fgh" firstAttribute="leading" secondItem="OwO-mZ-EyD" secondAttribute="leadingMargin" constant="100" id="bg6-ht-eyW"/>
+                                        <constraint firstItem="y3T-yC-Fgh" firstAttribute="top" secondItem="OwO-mZ-EyD" secondAttribute="topMargin" id="fRs-J4-hwt"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addTagButton" destination="y3T-yC-Fgh" id="SKy-Ub-oMF"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="imageRecipeCell" rowHeight="170" id="BYL-vf-mBj" customClass="ImageRecipeTableViewCell" customModule="RecipesApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="224.5" width="374" height="170"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BYL-vf-mBj" id="VEu-iN-AaZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="170"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pyk-Vq-AEN">
+                                            <rect key="frame" x="120" y="11" width="150" height="150"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="5gJ-ay-NZY"/>
+                                                <constraint firstAttribute="height" constant="150" id="ZCK-MF-Mxa"/>
+                                                <constraint firstAttribute="width" constant="150" id="bK2-Hf-qBq"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="ybJ-EY-MEs"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Pyk-Vq-AEN" firstAttribute="top" secondItem="VEu-iN-AaZ" secondAttribute="topMargin" id="7lm-Me-e2c"/>
+                                        <constraint firstItem="Pyk-Vq-AEN" firstAttribute="leading" secondItem="VEu-iN-AaZ" secondAttribute="leadingMargin" constant="100" id="H8L-U3-9Ku"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="recipeImage" destination="Pyk-Vq-AEN" id="Nqr-hv-ssA"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="buttonRecipeCell" rowHeight="70" id="jg4-Wf-6uF" customClass="ButtonRecipeTableViewCell" customModule="RecipesApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="394.5" width="374" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jg4-Wf-6uF" id="tQS-jg-Pjk">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGz-s7-O18">
+                                            <rect key="frame" x="20" y="11" width="334" height="48"/>
+                                            <color key="backgroundColor" red="0.65811707740000003" green="0.2145648856" blue="0.16613643389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Add Recipe">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="PGz-s7-O18" firstAttribute="leading" secondItem="tQS-jg-Pjk" secondAttribute="leadingMargin" id="HTe-lH-gSo"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="PGz-s7-O18" secondAttribute="bottom" id="K2j-qw-9Ch"/>
+                                        <constraint firstItem="PGz-s7-O18" firstAttribute="top" secondItem="tQS-jg-Pjk" secondAttribute="topMargin" id="rzI-K9-mI6"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="PGz-s7-O18" secondAttribute="trailing" id="zdS-Eo-kR8"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addRecipeButton" destination="PGz-s7-O18" id="AQc-9K-Dml"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
