@@ -18,10 +18,12 @@ class RecipeCell: UITableViewCell {
     
     @IBOutlet weak var likeButton: UIButton!
     
+    let darkGreenColor = UIColor(red: 0.145, green: 0.212, blue: 0.125, alpha: 1)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        likeButton.tintColor = .darkGray
+        likeButton.tintColor = darkGreenColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,10 +32,10 @@ class RecipeCell: UITableViewCell {
     }
     
     @IBAction func likeButtonPressed(_ sender: UIButton) {
-        if sender.tintColor == .darkGray {
-            sender.tintColor = .systemRed
+        if sender.tintColor == darkGreenColor {
+            sender.tintColor = UIColor(red: 0.823, green: 0.095, blue: 0.017, alpha: 1)
         } else {
-            sender.tintColor = .darkGray
+            sender.tintColor = darkGreenColor
         }
     }
     

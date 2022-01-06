@@ -15,15 +15,16 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jTS-Wr-1Zm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.063426044469999998" green="0.4361498815" blue="0.29773718119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.14520269629999999" green="0.2118509412" blue="0.1247086152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.14520269629999999" green="0.33188127097764425" blue="0.1247086152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.14520269629999999" green="0.2118509412" blue="0.1247086152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="IhS-a4-IQT" kind="relationship" relationship="viewControllers" id="F4F-9y-ZX9"/>
-                        <segue destination="gLz-r8-wzi" kind="relationship" relationship="viewControllers" id="t0k-oe-B2Z"/>
-                        <segue destination="K4F-ze-f8Y" kind="relationship" relationship="viewControllers" id="Yq1-5t-9Zl"/>
+                        <segue destination="joi-ka-se9" kind="relationship" relationship="viewControllers" id="AjB-Gb-xaY"/>
+                        <segue destination="gLz-r8-wzi" kind="relationship" relationship="viewControllers" id="N2v-AE-V4M"/>
+                        <segue destination="K4F-ze-f8Y" kind="relationship" relationship="viewControllers" id="cx4-h9-1id"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Dc-Jm-pW2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -148,6 +149,16 @@
             </objects>
             <point key="canvasLocation" x="327.536231884058" y="-1074.7767857142856"/>
         </scene>
+        <!--FavoriteRecipesStoryboard-->
+        <scene sceneID="Aoq-lF-fj8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FavoriteRecipesStoryboard" id="joi-ka-se9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star" catalog="system" id="XBB-Ya-o1Q"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s5b-Pe-IZ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="-472"/>
+        </scene>
         <!--PersonalPostsStoryboard-->
         <scene sceneID="UbR-s7-Gb5">
             <objects>
@@ -156,7 +167,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQP-ue-M3w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-472"/>
+            <point key="canvasLocation" x="1840" y="-472"/>
         </scene>
         <!--SettingsStoryboard-->
         <scene sceneID="lyK-ed-aue">
@@ -184,6 +195,7 @@
         <image name="loginMealImage" width="2500" height="1667"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -9,13 +9,37 @@ import UIKit
 
 class IngredientsRecipesViewController: UITableViewController, UIBarPositioningDelegate {
     
+    // MARK: Outlets
+    @IBOutlet weak var addIngedientsButton: UIButton!
+    
     // MARK: Properties
     var recipes: [Recipe]!
+    var filteredRecipes = [Recipe]()
+    var favoriteRecipes = [Recipe]()
+    
     
     let firstSegmentButton = UIButton()
     let firstSegmentView = UIView()
     let secondSegmentButton = UIButton()
     let secondSegmentView = UIView()
+    
+    let newView = UIView()
+    
+    let noCellsLabel: UILabel = {
+        let label = UILabel()
+        
+        label.text = "Add ingedients to see recipes.\nTo add ingredients tap button in the top right corner."
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.textColor = UIColor(red: 0.145, green: 0.332, blue: 0.125, alpha: 1)
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = true
+        
+        return label
+    }()
+    
+    let searchController = UISearchController()
     
     fileprivate let cellIdentifier = "recipeCell"
     
@@ -23,8 +47,32 @@ class IngredientsRecipesViewController: UITableViewController, UIBarPositioningD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configNavBar()
+        addIngedientsButton.layer.cornerRadius = 10
+        
+        filteredRecipes = recipes
+        navigationItem.searchController = searchController
+        view.addSubview(noCellsLabel)
         createMenuBar()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        noCellsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        noCellsLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
+        noCellsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
+        noCellsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // to preventing NavBar from glitching for a sec
+        // after going to next view
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configNavBar()
+        navigationController?.navigationBar.isHidden = false
     }
     
 }
@@ -38,7 +86,7 @@ extension IngredientsRecipesViewController {
         let standardAppearance = UINavigationBarAppearance()
         standardAppearance.configureWithOpaqueBackground()
         standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        standardAppearance.backgroundColor = UIColor(red: 0.224, green: 0.381, blue: 0.210, alpha: 1)
+        standardAppearance.backgroundColor = UIColor(red: 0.145, green: 0.212, blue: 0.125, alpha: 1)
         standardAppearance.backgroundImage = UIImage()
         standardAppearance.shadowImage = UIImage()
         
@@ -81,9 +129,8 @@ extension IngredientsRecipesViewController {
     private func createMenuBar() {
         // Creating additional view right under
         // the navigation bar
-        let newView = UIView()
         let line = UIView()
-        newView.backgroundColor = UIColor(red: 0.224, green: 0.381, blue: 0.210, alpha: 1)
+        newView.backgroundColor = UIColor(red: 0.145, green: 0.212, blue: 0.125, alpha: 1)
         view.addSubview(newView)
         view.addSubview(line)
         newView.translatesAutoresizingMaskIntoConstraints = false
@@ -92,7 +139,7 @@ extension IngredientsRecipesViewController {
         newView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
         newView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
         newView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
-        newView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        newView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         line.backgroundColor = .black
         
@@ -168,7 +215,14 @@ extension IngredientsRecipesViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        recipes.count
+        
+        if filteredRecipes.isEmpty {
+            noCellsLabel.isHidden = false
+        } else {
+            noCellsLabel.isHidden = true
+        }
+        
+        return filteredRecipes.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -176,6 +230,7 @@ extension IngredientsRecipesViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecipeCell
         
         let recipe = recipes[indexPath.section]
@@ -185,7 +240,7 @@ extension IngredientsRecipesViewController {
         
         // background color when selected
         let selectedView = UIView()
-        selectedView.backgroundColor = UIColor(red: 0.063, green: 0.436, blue: 0.298, alpha: 1)
+        selectedView.backgroundColor = UIColor(red: 0.145, green: 0.212, blue: 0.125, alpha: 1)
         cell.selectedBackgroundView = selectedView
         selectedView.sizeToFit()
         
