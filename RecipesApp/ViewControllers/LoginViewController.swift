@@ -53,6 +53,4 @@ class LoginViewController: UIViewController {
     @IBAction func unwindSegue(segue: UIStoryboardSegue){
         
     }
-    
-    
 }

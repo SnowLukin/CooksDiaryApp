@@ -80,15 +80,15 @@
                                     <outlet property="bioLabel" destination="Agi-ud-csZ" id="W4g-og-Ul6"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="buttonCell" rowHeight="70" id="Piy-aK-yKg" customClass="ButtonTableViewCell" customModule="RecipesApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="499.5" width="374" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="buttonCell" rowHeight="72" id="Piy-aK-yKg" customClass="ButtonTableViewCell" customModule="RecipesApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="499.5" width="374" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Piy-aK-yKg" id="c8c-WW-JdS">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bZ-tz-mJu">
-                                            <rect key="frame" x="20" y="11" width="334" height="48"/>
+                                            <rect key="frame" x="20" y="11" width="334" height="50"/>
                                             <color key="backgroundColor" red="0.65811707739977487" green="0.21456488563989731" blue="0.16613643387486871" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -116,13 +116,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Profile" id="UOh-mx-4WH">
-                        <imageReference key="image" image="person" catalog="system" renderingMode="hierarchical-single">
-                            <hierarchicalColors>
-                                <color red="0.14520269629999999" green="0.2118509412" blue="0.1247086152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color systemColor="secondaryLabelColor"/>
-                                <color systemColor="tertiaryLabelColor"/>
-                            </hierarchicalColors>
-                        </imageReference>
+                        <imageReference key="image" image="person" catalog="system"/>
                         <imageReference key="selectedImage" image="person" catalog="system" renderingMode="hierarchical-single">
                             <hierarchicalColors>
                                 <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -137,7 +131,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPh-9N-DWs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Pai-eM-qge" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="870" y="98"/>
+            <point key="canvasLocation" x="869.56521739130437" y="97.767857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K1f-E5-kyQ">

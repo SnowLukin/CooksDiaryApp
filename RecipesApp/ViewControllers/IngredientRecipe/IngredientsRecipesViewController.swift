@@ -240,7 +240,7 @@ extension IngredientsRecipesViewController {
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section == filteredRecipes.count - 1 {
-            return 100
+            return 70
         }
         return 15
     }

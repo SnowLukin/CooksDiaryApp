@@ -18,7 +18,4 @@ class BioTableViewCell: UITableViewCell {
         
         bioLabel.textColor = .white
     }
-
-    
-
 }
