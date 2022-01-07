@@ -24,19 +24,6 @@ class RecipeCell: UITableViewCell {
     let darkGreenColor = UIColor(red: 0.145, green: 0.212, blue: 0.125, alpha: 1)
     let customRedColor = UIColor(red: 0.823, green: 0.095, blue: 0.017, alpha: 1)
     
-    // MARK: Override
-    override func awakeFromNib() {
-        super.awakeFromNib()
-//        likeButton.tintColor = darkGreenColor
-//        dishNameLabel.text = recipe.name
-//        creatorLabel.text = recipe.author
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-    }
-    
     // MARK: IBActions
     @IBAction func likeButtonPressed(_ sender: UIButton) {
         if sender.tintColor == darkGreenColor {

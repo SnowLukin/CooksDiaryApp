@@ -10,12 +10,5 @@ import UIKit
 class BioTableViewCell: UITableViewCell {
     
     @IBOutlet var bioLabel: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        backgroundColor = UIColor(red: 0.224, green: 0.381, blue: 0.210, alpha: 1)
-        
-        bioLabel.textColor = .white
-    }
+    
 }

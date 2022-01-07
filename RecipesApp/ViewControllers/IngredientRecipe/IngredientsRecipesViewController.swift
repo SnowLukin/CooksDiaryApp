@@ -11,6 +11,10 @@ protocol RecipeCellDelegate {
     func likeRecipe(_ indexPath: IndexPath)
 }
 
+protocol AddIngredientsDelegate {
+    func setRecipesForIngredients(_ tags: [Any])
+}
+
 class IngredientsRecipesViewController: UITableViewController, UIBarPositioningDelegate {
     
     // MARK: Outlets
@@ -82,6 +86,7 @@ class IngredientsRecipesViewController: UITableViewController, UIBarPositioningD
         navigationController?.navigationBar.isHidden = false
     }
     
+    // MARK: Override Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let infoVC = segue.destination as? RecipeInfoViewController else { return }
         let indexPath = tableView.indexPathForSelectedRow!
@@ -90,9 +95,9 @@ class IngredientsRecipesViewController: UITableViewController, UIBarPositioningD
     
 }
 
+// MARK: - RecipeCellDelegate
 extension IngredientsRecipesViewController: RecipeCellDelegate {
     func likeRecipe(_ indexPath: IndexPath) {
-        print(indexPath.section)
         if recipes[indexPath.section].isLiked {
             recipes[indexPath.section].isLiked = false
         } else {
@@ -148,7 +153,6 @@ extension IngredientsRecipesViewController {
             firstSegmentButton.setTitleColor(.lightGray, for: .normal)
             firstSegmentView.backgroundColor = .clear
             
-            print(recipes[0].isLiked)
             filteredRecipes = recipes.filter({ $0.isLiked == true })
         }
         tableView.reloadData()

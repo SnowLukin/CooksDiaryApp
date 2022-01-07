@@ -9,13 +9,27 @@ import UIKit
 
 
 class Section {
+    
     let title: String
-    let options: [String]
+    let options: [OptionInSection]
     var isOpened: Bool
     
-    init(title: String, options: [String], isOpened: Bool = false) {
+    var amountOfChosenOptions: Int {
+        options.filter({ $0.isChosen == true }).count
+    }
+    
+    init(title: String, options: [OptionInSection], isOpened: Bool = false) {
         self.title = title
         self.options = options
         self.isOpened = isOpened
+    }
+}
+
+class OptionInSection {
+    var option: String
+    var isChosen = false
+    
+    init(_ option: String) {
+        self.option = option
     }
 }

@@ -111,10 +111,10 @@
 		D796B995277F31B200802127 /* IngredientRecipe */ = {
 			isa = PBXGroup;
 			children = (
-				D78215BE27865A480076ACA2 /* AddIngridents */,
 				D796B996277F320700802127 /* IngredientsRecipesViewController.swift */,
-				D78215B02783A2440076ACA2 /* Extensions.swift */,
 				D796B998277F32DF00802127 /* CustomCell */,
+				D78215BE27865A480076ACA2 /* AddIngridents */,
+				D78215B02783A2440076ACA2 /* Extensions.swift */,
 				D78215B22783BD9E0076ACA2 /* RecipeInfo */,
 			);
 			path = IngredientRecipe;

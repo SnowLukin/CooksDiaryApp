@@ -14,6 +14,5 @@ class ButtonTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         logOutButton.layer.cornerRadius = 10
-        backgroundColor = UIColor(red: 0.224, green: 0.381, blue: 0.210, alpha: 1)
     }
 }
