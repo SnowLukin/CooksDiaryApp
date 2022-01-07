@@ -20,7 +20,7 @@ class TextFieldRecipeTableViewCell: UITableViewCell {
     }
     
     @objc private func didTapDone(){
-        viewWithTag(tag)?.endEditing(true)
+        textFieldRecipe.endEditing(true)
     }
 
 }
@@ -28,9 +28,9 @@ extension TextFieldRecipeTableViewCell: UITextViewDelegate{
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        viewWithTag(tag)?.endEditing(true)
+        textFieldRecipe.endEditing(true)
     }
-    
+
     func textViewDidBeginEditing(_ textView: UITextView) {
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()

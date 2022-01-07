@@ -30,6 +30,9 @@
                                             <color key="textColor" systemColor="labelColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="W8T-q8-lsd" id="KJs-En-Buc"/>
+                                            </connections>
                                         </textView>
                                     </subviews>
                                     <constraints>
