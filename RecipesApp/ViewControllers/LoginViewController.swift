@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     private let user = User.getUserLogin()
-    
+        
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
