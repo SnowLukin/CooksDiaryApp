@@ -7,12 +7,20 @@
 
 import UIKit
 
-protocol RecipeCellDelegate {
-    func likeRecipe(_ indexPath: IndexPath)
-}
-
 protocol AddIngredientsDelegate {
-    func setRecipesForIngredients(_ tags: [Any])
+    func setRecipesForIngredients(alcohol: [Ingredients.Alcohol],
+                                  beverages: [Ingredients.Beverages],
+                                  cheese: [Ingredients.Cheese],
+                                  dairy: [Ingredients.Dairy],
+                                  desserts: [Ingredients.Desserts],
+                                  fish: [Ingredients.Fish],
+                                  sweeteners: [Ingredients.Sweeteners],
+                                  seeds: [Ingredients.Seeds],
+                                  sauces: [Ingredients.Sauces],
+                                  pasta: [Ingredients.Pasta],
+                                  meats: [Ingredients.Meats],
+                                  fruitsAndBarries: [Ingredients.FruitsAndBarries],
+                                  vegetables: [Ingredients.Vegetables])
 }
 
 class IngredientsRecipesViewController: UITableViewController, UIBarPositioningDelegate {
@@ -23,7 +31,7 @@ class IngredientsRecipesViewController: UITableViewController, UIBarPositioningD
     // MARK: Properties
     var recipes: [Recipe]!
     var filteredRecipes = [Recipe]()
-    var favoriteRecipes = [Recipe]()
+    var tempRecipes = [Recipe]()
     var currentRecipe: Recipe? = nil
     
     let darkGreenColor = UIColor(red: 0.145, green: 0.212, blue: 0.125, alpha: 1)
@@ -39,7 +47,7 @@ class IngredientsRecipesViewController: UITableViewController, UIBarPositioningD
     let noCellsLabel: UILabel = {
         let label = UILabel()
         
-        label.text = "Add ingedients to see recipes.\nTo add ingredients tap button in the top right corner."
+        label.text = "Nothing yet :("
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 20)
         label.textColor = UIColor(red: 0.145, green: 0.332, blue: 0.125, alpha: 1)
@@ -59,7 +67,7 @@ class IngredientsRecipesViewController: UITableViewController, UIBarPositioningD
         super.viewDidLoad()
         
         addIngedientsButton.layer.cornerRadius = 10
-        
+        tempRecipes = recipes
         filteredRecipes = recipes
         navigationItem.searchController = searchController
         view.addSubview(noCellsLabel)
@@ -88,22 +96,54 @@ class IngredientsRecipesViewController: UITableViewController, UIBarPositioningD
     
     // MARK: Override Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let infoVC = segue.destination as? RecipeInfoViewController else { return }
-        let indexPath = tableView.indexPathForSelectedRow!
-        infoVC.recipe = recipes[indexPath.section]
+        if let infoVC = segue.destination as? RecipeInfoViewController {
+            let indexPath = tableView.indexPathForSelectedRow!
+            infoVC.recipe = filteredRecipes[indexPath.section]
+        }
+        guard let navVC = segue.destination as? UINavigationController else { return }
+        guard let ingredientsVC = navVC.topViewController as? AddIngredientsViewController else { return }
+        ingredientsVC.delegate = self
+                
     }
     
 }
 
-// MARK: - RecipeCellDelegate
-extension IngredientsRecipesViewController: RecipeCellDelegate {
-    func likeRecipe(_ indexPath: IndexPath) {
-        if recipes[indexPath.section].isLiked {
-            recipes[indexPath.section].isLiked = false
-        } else {
-            recipes[indexPath.section].isLiked = true
-        }
+// MARK: - AddIngredientsDelegate
+extension IngredientsRecipesViewController: AddIngredientsDelegate {
+    
+    func setRecipesForIngredients(alcohol: [Ingredients.Alcohol],
+                                  beverages: [Ingredients.Beverages],
+                                  cheese: [Ingredients.Cheese],
+                                  dairy: [Ingredients.Dairy],
+                                  desserts: [Ingredients.Desserts],
+                                  fish: [Ingredients.Fish],
+                                  sweeteners: [Ingredients.Sweeteners],
+                                  seeds: [Ingredients.Seeds],
+                                  sauces: [Ingredients.Sauces],
+                                  pasta: [Ingredients.Pasta],
+                                  meats: [Ingredients.Meats],
+                                  fruitsAndBarries: [Ingredients.FruitsAndBarries],
+                                  vegetables: [Ingredients.Vegetables]) {
+        tempRecipes = recipes.filter({ recipe in
+            Set(alcohol).isSubset(of: Set(recipe.alcohol)) &&
+            Set(beverages).isSubset(of: Set(recipe.beverages)) &&
+            Set(cheese).isSubset(of: Set(recipe.cheese)) &&
+            Set(dairy).isSubset(of: Set(recipe.dairy)) &&
+            Set(desserts).isSubset(of: Set(recipe.desserts)) &&
+            Set(fish).isSubset(of: Set(recipe.fish)) &&
+            Set(sweeteners).isSubset(of: Set(recipe.sweeteners)) &&
+            Set(seeds).isSubset(of: Set(recipe.seeds)) &&
+            Set(sauces).isSubset(of: Set(recipe.sauces)) &&
+            Set(pasta).isSubset(of: Set(recipe.pasta)) &&
+            Set(meats).isSubset(of: Set(recipe.meats)) &&
+            Set(fruitsAndBarries).isSubset(of: Set(recipe.fruitsAndBarries)) &&
+            Set(vegetables).isSubset(of: Set(recipe.vegetables))
+        })
+        
+        filteredRecipes = tempRecipes
+        tableView.reloadData()
     }
+    
 }
 
 // MARK: - Setting NavBar
@@ -133,7 +173,6 @@ extension IngredientsRecipesViewController {
     }
 }
 
-
 // MARK: - Setting MenuBar
 extension IngredientsRecipesViewController {
     
@@ -146,7 +185,7 @@ extension IngredientsRecipesViewController {
             secondSegmentButton.setTitleColor(.lightGray, for: .normal)
             secondSegmentView.backgroundColor = .clear
             
-            filteredRecipes = recipes
+            filteredRecipes = tempRecipes
         default:
             sender.setTitleColor(.white, for: .normal)
             secondSegmentView.backgroundColor = .white
@@ -256,7 +295,6 @@ extension IngredientsRecipesViewController {
         } else {
             noCellsLabel.isHidden = true
         }
-        
         return filteredRecipes.count
     }
     
@@ -267,19 +305,15 @@ extension IngredientsRecipesViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecipeCell
-        
         let recipe = filteredRecipes[indexPath.section]
-        
-        cell.indexPath = indexPath
-        cell.delegate = self
-        cell.dishNameLabel.text = recipe.name
-        cell.creatorLabel.text = recipe.author
         
         if recipe.isLiked {
             cell.likeButton.tintColor = customRedColor
         } else {
             cell.likeButton.tintColor = darkGreenColor
         }
+        cell.dishNameLabel.text = recipe.name
+        cell.creatorLabel.text = recipe.author
         
         // background color when selected
         let selectedView = UIView()

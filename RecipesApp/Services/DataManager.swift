@@ -13,32 +13,29 @@ class DataManager {
     
     let firstRecipe = Recipe(name: "First Recipe",
                              description: "This is the first recipe on the list",
-                             ingredientTags: [Ingredients.Sauces.appleSauce,
-                                              Ingredients.Fish.anchovy,
-                                              Ingredients.Alcohol.wine],
-                             author: "System")
+                             author: "System",
+                             dairy: [.egg, .icecream])
     let secondRecipe = Recipe(name: "Second Recipe",
                               description: "This is the second recipe on the list",
-                              ingredientTags: [Ingredients.FruitsAndBarries.pineapple,
-                                               Ingredients.Sweeteners.appleSyrup,
-                                               Ingredients.Alcohol.beer],
-                              author: "System")
+                              author: "System",
+                              alcohol: [.beer],
+                              fruitsAndBarries: [.apple, .banana])
     let thirdRecipe = Recipe(name: "Third Recipe",
                              description: "This is the third recipe on the list",
-                             ingredientTags: [Ingredients.Sweeteners.grenadine,
-                                              Ingredients.Vegetables.carrot,
-                                              Ingredients.Fish.cod],
-                             author: "System")
+                             author: "System",
+                             fish: [.cod],
+                             sweeteners: [.grenadine],
+                             vegetables: [.carrot])
     let forthRecipe = Recipe(name: "Forth Recipe",
                              description: "This is the forth recipe on the list",
-                             ingredientTags: [Ingredients.Dairy.egg,
-                                              Ingredients.Alcohol.vodka],
-                             author: "System")
+                             author: "System",
+                             fish: [.anchovy, .cod],
+                             seeds: [.chia])
     let fifthRecipe = Recipe(name: "Fifth Recipe",
                              description: "This is the fifth recipe on the list",
-                             ingredientTags: [Ingredients.Dairy.butter,
-                                              Ingredients.Cheese.creamcheese],
-                             author: "System")
+                             author: "System",
+                             alcohol: [.gin],
+                             beverages: [.appleJuice])
     
     var recipes: [Recipe] {
         [firstRecipe, secondRecipe, thirdRecipe, forthRecipe, fifthRecipe]

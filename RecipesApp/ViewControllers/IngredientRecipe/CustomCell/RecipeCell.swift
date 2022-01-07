@@ -9,9 +9,6 @@ import UIKit
 
 class RecipeCell: UITableViewCell {
     
-    var indexPath: IndexPath!
-    var delegate: RecipeCellDelegate!
-    
     // MARK: IBOutlets
     @IBOutlet weak var dishNameLabel: UILabel!
     @IBOutlet var starsImages: [UIImageView]!
@@ -31,6 +28,5 @@ class RecipeCell: UITableViewCell {
         } else {
             sender.tintColor = darkGreenColor
         }
-        delegate.likeRecipe(indexPath)
     }
 }
