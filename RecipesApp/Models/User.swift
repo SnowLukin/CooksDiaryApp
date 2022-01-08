@@ -8,25 +8,30 @@
 import Foundation
 
 
-class User {
+struct User {
+    let login: String
+    let password: String
+    let person: Person
+    
+    static func getUserLogin() -> User {
+        User(login: "User", password: "!12345qwerty", person: Person.getPersonData())
+    }
+}
+
+struct Person {
     
     enum Sex {
         case male
         case female
     }
     
-    var username: String
     var name: String
     var surname: String
     var bio: String
     var sex: Sex
     
-    init(username: String, name: String?, surname: String?, bio: String?, sex: Sex) {
-        self.username = username
-        self.name = name ?? ""
-        self.surname = surname ?? ""
-        self.bio = bio ?? ""
-        self.sex = sex
+    static func getPersonData() -> Person {
+        Person(name: "Name", surname: "Surname", bio: "Human", sex: Sex.male)
     }
     
 }
