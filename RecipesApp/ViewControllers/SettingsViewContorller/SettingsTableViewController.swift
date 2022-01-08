@@ -9,11 +9,7 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     
-    private let user = User(username: "User",
-                            name: "Snow",
-                            surname: "Lukin",
-                            bio: "Personable line cook with 4+ years expertise in a fast-paced kitchen environment. Achieved region-best culinary satisfaction rating according to national food critic (5-Star Rating). Seeking to advance my culinary career by joining the Bahari Restaurant team as the new chef.",
-                            sex: .male)
+    var user: User!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +33,13 @@ extension SettingsTableViewController {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ImageTableViewCell
-            cell.userNameLabel.text = "\(user.name) \(user.surname)"
+            cell.userNameLabel.text = "\(user.person.name) \(user.person.surname)"
             cell.userImageView.image = UIImage(named: "Snow")
             return cell
             
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "bioCell", for: indexPath) as! BioTableViewCell
-            cell.bioLabel.text = user.bio
+            cell.bioLabel.text = user.person.bio
             return cell
             
         default:

@@ -28,6 +28,9 @@ class TabBarController: UITabBarController {
             if let rootVC = navVC.topViewController as? IngredientsRecipesViewController {
                 rootVC.recipes = recipes
             }
+            if let profileVC = navVC.topViewController as? SettingsTableViewController {
+                profileVC.user = user
+            }
         }
     }
     

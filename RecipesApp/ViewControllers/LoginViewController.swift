@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    
     // MARK: IBOutlets
     @IBOutlet weak var loginTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
@@ -17,7 +18,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
-    private let user = User.getUserLogin()
+    private let users = User.getUserLogin()
         
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -30,51 +31,87 @@ class LoginViewController: UIViewController {
         
         containerView.layer.cornerRadius = 20
         containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
         loginButton.layer.cornerRadius = 12
+        
+        loginTF.delegate = self
+        passwordTF.delegate = self
+        setTextFields()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let tabbarController = segue.destination as? UITabBarController else { return }
-//        guard let viewControllers = tabbarController.viewControllers else { return }
-//
-//        viewControllers.forEach {
-//            if let navationVC = $0 as? UINavigationController {
-//                let ingredientsRecipesVC = navationVC.topViewController as! IngredientsRecipesViewController
-//                ingredientsRecipesVC.user = user
-//                let personalPostsVC = navationVC.topViewController as! PersonalPostsViewController
-//                personalPostsVC.user = user
-//                let settingsVC = navationVC.topViewController as! SettingsPostsViewController
-//                settingsVC.user = user
-//            }
         
+        let user = findUser(userName: loginTF.text ?? "", password: passwordTF.text ?? "")
+        guard let user = user else {
+            let title = "Incorrect username or password\n"
+            let message = "The username or password you entered is incorrect. Please try again.\n"
+            invalidInputAlert(title: title, message: message)
+            return
         }
-    
-    
-    
+        
+        guard let tabbarController = segue.destination as? TabBarController else { return }
+        tabbarController.user = user
+    }
     
     // MARK: IBActions
-    @IBAction func forgotPasswordButtonPressed() {
-        showAlert(title: "ПОДСКАЗКА!!!", message: """
-                                                    Ваш логин - \(user.login)
-                                                    Ваш пароль - \(user.password)
-                                                    """)
+    @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
+        
+        loginTF.text = nil
+        passwordTF.text = nil
     }
     
-    @IBAction func loginButtonPressed() {
-        if loginTF.text != user.login && passwordTF.text != user.password {
-            showAlert(title: "ОШИБКА!!!",
-                      message: "Введите правильный логин и пароль.",
-                      textField: passwordTF)
+    @IBAction func forgotPasswordAction(_ sender: UIButton) {
+        forgotAlert(title: "Forgot password?\n", message: "Your password is test\n")
+    }
+
+    
+    
+    // MARK: - Public Methods
+    func isUserExist() -> Bool {
+        guard let userName = loginTF.text, let password = passwordTF.text,
+              checkUser(userName: userName, password: password)
+        else {
+            let title = "Incorrect username or password\n"
+            let message = "The username or password you entered is incorrect. Please try again.\n"
+            invalidInputAlert(title: title, message: message)
+            return false
         }
-    }
-    //MARK: - unwind seque
-    @IBAction func unwindSeque (seque: UIStoryboardSegue) {
-        loginTF.text = ""
-        passwordTF.text = ""
+        return true
     }
     
+    // MARK: - Private Methods
     
+    private func setTextFields() {
+        loginTF.returnKeyType = .next
+        passwordTF.returnKeyType = .done
+        
+        passwordTF.enablesReturnKeyAutomatically = true
+        
+        loginTF.tintColor = .lightGray
+        loginTF.setIcon(UIImage(named: "user")!)
+        
+        passwordTF.tintColor = .lightGray
+        passwordTF.setIcon(UIImage(named: "password")!)
+    }
+    
+    private func findUser(userName: String, password: String) -> User? {
+        for user in users {
+            if user.login == userName && user.password == password {
+                return user
+            }
+        }
+        return nil
+    }
+    
+    private func checkUser(userName: String, password: String) -> Bool {
+        users.contains(where: {
+            $0.login == userName && $0.password == password
+        })
+    }
 }
 
 // MARK: - Private Methods
@@ -90,25 +127,40 @@ extension LoginViewController {
 }
 
 
-    
-    
-    // MARK: Override Methods
-//     Hide keyboard by touching on screen
 extension LoginViewController: UITextFieldDelegate {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         if textField == loginTF {
             passwordTF.becomeFirstResponder()
-        } else {
-            loginButtonPressed()
-            performSegue(withIdentifier: "showTabBarController", sender: nil)
+        } else if isUserExist() {
+            performSegue(withIdentifier: "LogInSegue", sender: self)
         }
-        return true
-    @IBAction func unwindSegue(segue: UIStoryboardSegue){
         
+        return true
+    }
+}
+
+// MARK: Alerts
+extension LoginViewController {
+    private func forgotAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        alert.setNeededFont()
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    private func invalidInputAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.passwordTF.text = nil
+        }
+        
+        alert.setNeededFont()
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }

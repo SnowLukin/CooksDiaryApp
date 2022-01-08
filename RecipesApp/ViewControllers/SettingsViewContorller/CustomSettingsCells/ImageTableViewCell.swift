@@ -15,7 +15,6 @@ class ImageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-//        userImageView.layer.masksToBounds = false
         userImageView.clipsToBounds = true
         userImageView.layer.cornerRadius = userImageView.frame.width / 2
     }

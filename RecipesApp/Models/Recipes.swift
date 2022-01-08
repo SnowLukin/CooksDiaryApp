@@ -27,10 +27,6 @@ struct Recipe {
     var fruitsAndBarries: [Ingredients.FruitsAndBarries]
     var vegetables: [Ingredients.Vegetables]
     
-    var ingredientTags: [Any] = [
-        
-    ]
-    
     var isLiked: Bool = false
     
     init(name: String, description: String = "", author: String,
