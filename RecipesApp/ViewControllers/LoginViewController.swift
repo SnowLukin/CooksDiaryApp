@@ -164,3 +164,42 @@ extension LoginViewController {
         present(alert, animated: true)
     }
 }
+
+// MARK: Keyboard
+extension LoginViewController {
+    
+    @objc func keyboardWillBeShown(_ notification: NSNotification) {
+        // continue only if frame is not up already
+        guard view.frame.origin.y == 0 else { return }
+        
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
+                                  as? NSValue)?.cgRectValue else { return }
+        
+        let topOfKeyboard = keyboardSize.minY
+        let bottomOfContainerView = passwordTF.convert(passwordTF.bounds, to: view).maxY;
+        let spaceFromBottomToContainer = view.frame.maxY - bottomOfContainerView
+        
+        // if the bottom of ContainerView is below the top of keyboard, move up
+        if bottomOfContainerView > topOfKeyboard {
+            view.frame.origin.y = 0 - (keyboardSize.height - spaceFromBottomToContainer + 15)
+        }
+    }
+    
+    @objc func keyboardWillBeHidden(_ notification: NSNotification) {
+
+        // move view back to normal
+        view.frame.origin.y = 0
+    }
+    
+    private func getKeyboardStatus() {
+        
+        // Listen for keyboard events
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeShown(_:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(_:)),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+}

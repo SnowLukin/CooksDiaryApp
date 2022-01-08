@@ -58,7 +58,12 @@ class IngredientsRecipesViewController: UITableViewController, UIBarPositioningD
         return label
     }()
     
-    let searchController = UISearchController()
+    var searchController: UISearchController = {
+        let searchController = UISearchController()
+        searchController.searchBar.barStyle = .black
+        
+        return searchController
+    }()
     
     fileprivate let cellIdentifier = "recipeCell"
     
@@ -69,6 +74,7 @@ class IngredientsRecipesViewController: UITableViewController, UIBarPositioningD
         addIngedientsButton.layer.cornerRadius = 10
         tempRecipes = recipes
         filteredRecipes = recipes
+        searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
         view.addSubview(noCellsLabel)
         createMenuBar()
@@ -106,6 +112,36 @@ class IngredientsRecipesViewController: UITableViewController, UIBarPositioningD
                 
     }
     
+    
+    @IBAction func clearButtonPressed(_ sender: UIBarButtonItem) {
+        tempRecipes = recipes
+        filteredRecipes = tempRecipes
+        tableView.reloadData()
+    }
+    
+}
+
+// MARK: - SearchController
+extension IngredientsRecipesViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        guard let searchText = searchController.searchBar.text else { return }
+        let text = searchText.trimmingCharacters(in: .whitespaces)
+        
+        filteredRecipes = []
+        if text == "" {
+            filteredRecipes = tempRecipes
+        }
+        
+        for recipe in tempRecipes {
+            if recipe.name.contains(text) {
+                filteredRecipes.append(recipe)
+            }
+        }
+        
+        tableView.reloadData()
+    }
 }
 
 // MARK: - AddIngredientsDelegate
@@ -312,6 +348,8 @@ extension IngredientsRecipesViewController {
         } else {
             cell.likeButton.tintColor = darkGreenColor
         }
+        cell.recipes = filteredRecipes
+        cell.index = indexPath.section
         cell.dishNameLabel.text = recipe.name
         cell.creatorLabel.text = recipe.author
         

@@ -185,6 +185,12 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Recipes" id="fme-bP-nFA">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="ICz-Qq-f1f">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="clearButtonPressed:" destination="8H8-mh-wZJ" id="miS-om-Kd3"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="sw3-mk-A49">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Jtk-Jk-m2Z">
                                 <rect key="frame" x="302" y="6.5" width="92" height="31"/>

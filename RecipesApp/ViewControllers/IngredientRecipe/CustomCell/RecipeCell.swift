@@ -9,6 +9,9 @@ import UIKit
 
 class RecipeCell: UITableViewCell {
     
+    var recipes: [Recipe]!
+    var index: Int!
+    
     // MARK: IBOutlets
     @IBOutlet weak var dishNameLabel: UILabel!
     @IBOutlet var starsImages: [UIImageView]!
@@ -25,8 +28,10 @@ class RecipeCell: UITableViewCell {
     @IBAction func likeButtonPressed(_ sender: UIButton) {
         if sender.tintColor == darkGreenColor {
             sender.tintColor = customRedColor
+            recipes[index].isLiked = true
         } else {
             sender.tintColor = darkGreenColor
+            recipes[index].isLiked = false
         }
     }
 }
